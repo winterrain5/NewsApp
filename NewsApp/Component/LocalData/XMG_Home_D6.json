@@ -1,10 +1,5 @@
 {
-    "status": 1,
-    "data": [
-        {
-            "entryid": 10001,
-            "resource": {
-                "cateArea": [
+  "cateArea": [
                     {
                         "id": 178,
                         "type": 1,
@@ -62,7 +57,7 @@
                         "deputyTitle": "游乐1折起",
                         "otherDesc": "HOT",
                         "topicId": 8766,
-                        "entranceImgUrl": "http://p0.meituan.net/w.h/groupop/e7609c4c8c61d79e623681128c0c662845863.png",
+                        "entranceImgUrl": "http://p0.meituan.net/60.60/groupop/e7609c4c8c61d79e623681128c0c662845863.png",
                         "target": "imeituan://www.meituan.com/deal/list?type=poi&group_category_id=20007&category_id=20007"
                     },
                     {
@@ -85,16 +80,7 @@
                         "entranceImgUrl": "http://p1.meituan.net/w.h/groupop/4a10f786f316fd5111a8a745d7eb9fc621675.png",
                         "target": "imeituan://www.meituan.com/deal/list?group_category_id=39&category_id=39"
                     }
-                ],
-                "topArea": {
-                    "id": 1,
-                    "type": 1,
-                    "target": "imeituan://www.meituan.com/morecategory"
-                }
-            }
-        }
-    ],
-    "server": {
-        "time": 1459731016
-    }
+
+                ]
+
 }

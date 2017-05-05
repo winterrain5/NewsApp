@@ -27,6 +27,7 @@ export default class HomeShopCenterView extends Component {
           rightTitle={Home_D5.tips}
           leftTitle='购物中心'
           leftIconName='gw'
+          callBackFunction={(title) => AlertIOS.alert(title)}
         />
         {/* 商场列表 */}
         <ScrollView

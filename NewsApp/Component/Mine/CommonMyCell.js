@@ -15,7 +15,8 @@ export default class CommonMyCell extends Component {
     leftIconName: '',
     leftTitle: '',
     rightIconName: '',
-    rightTitle: ''
+    rightTitle: '',
+    callBackFunction: null
   };
   static propTypes = {
     leftIconName: React.PropTypes.string.isRequired,
@@ -28,7 +29,7 @@ export default class CommonMyCell extends Component {
   }
   render() {
     return (
-      <TouchableOpacity activeOpacity={0.5}>
+      <TouchableOpacity activeOpacity={0.5} onPress={() => this.props.callBackFunction(this.props.leftTitle)}>
         <View style={styles.container}>
           {/* 左边的 */}
           <View style={styles.leftViewStyle}>

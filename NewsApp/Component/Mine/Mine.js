@@ -7,7 +7,8 @@ import {
   StyleSheet,
   Text,
   View,
-  ScrollView
+  ScrollView,
+  AlertIOS
 } from 'react-native';
 
 export default class Mine extends Component {
@@ -25,6 +26,7 @@ export default class Mine extends Component {
             rightTitle='查看全部订单'
             leftTitle='我的订单'
             leftIconName='collect'
+            callBackFunction={(title) => AlertIOS.alert(title)}
           />
         </View>
         <MyHeadMediaView/>
@@ -34,17 +36,20 @@ export default class Mine extends Component {
             rightTitle='账户余额：¥100'
             leftTitle='我的钱包'
             leftIconName='draft'
+            callBackFunction={(title) => AlertIOS.alert(title)}
           />
           <CommonMyCell
             leftTitle='抵用券'
             leftIconName='like'
             rightTitle='10张'
+            callBackFunction={(title) => AlertIOS.alert(title)}
           />
         </View>
         <View style={{marginTop: 10}}>
           <CommonMyCell
             leftTitle='积分商城'
             leftIconName='card'
+            callBackFunction={(title) => AlertIOS.alert(title)}
           />
         </View>
         <View style={{marginTop: 10}}>
@@ -52,6 +57,7 @@ export default class Mine extends Component {
             leftTitle='今日推荐'
             leftIconName='new_friend'
             rightIconName='me_new'
+            callBackFunction={(title) => AlertIOS.alert(title)}
           />
         </View>
         <View style={{marginTop: 10}}>
@@ -59,6 +65,7 @@ export default class Mine extends Component {
             leftTitle='我要合作'
             leftIconName='pay'
             rightTitle='轻松开店,招财进宝'
+            callBackFunction={(title) => AlertIOS.alert(title)}
           />
         </View>
       </ScrollView>

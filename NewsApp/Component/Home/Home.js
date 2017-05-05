@@ -4,6 +4,8 @@ import HomeMiddleView from './HomeMiddleView'
 import HomeMiddleBottomView from './HomeMiddleBottomView'
 import HomeDetail from './HomeDetail'
 import HomeShopCenterView from './HomeShopCenterView'
+import HomeGeustYouLikeView from './HomeGeustYouLikeView'
+import HomeHotChannelView from './HomeHotChannelView'
 
 import {
   AppRegistry,
@@ -52,8 +54,24 @@ export default class Home extends Component {
           <HomeShopCenterView
             popToHome={(detailurl) => this.pushToDetail(detailurl)}
           />
+          {/* 热门频道 */}
+          <HomeHotChannelView/>
+          {/* 猜你喜欢 */}
+          <HomeGeustYouLikeView/>
+          {/* 最后的 */}
+          {this.renderBottomView()}
         </ScrollView>
       </View>
+    );
+  }
+  renderBottomView() {
+    return(
+      <TouchableOpacity activeOpacity={0.5} onPress={() => AlertIOS.alert('😁😁😁😁😁😁😁')}>
+        <View style={styles.bottomViewStyle}>
+          <Text style={{color: 'red'}}>查看全部商品</Text>
+        </View>
+      </TouchableOpacity>
+
     );
   }
   // 跳转下级界面
@@ -67,7 +85,6 @@ export default class Home extends Component {
   }
 
   dealWithDetailUrl(detailurl) {
-    console.log(detailurl);
   	var str = detailurl.replace(/imeituan/,'');
   	var str = str.replace(/\:\/\/www.meituan.com\/web\/\?url\=/,'');
     return str;
@@ -134,8 +151,13 @@ const styles = StyleSheet.create({
     color: 'white',
     fontSize: 18,
   },
-  scrollViewStyle: {
-
+  bottomViewStyle: {
+    backgroundColor: 'white',
+    margin: 10,
+    height: 35,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 3
   }
 
 });
