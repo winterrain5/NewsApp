@@ -1,4 +1,9 @@
 import React, { Component } from 'react';
+import HomeTopView from './HomeTopView';
+import HomeMiddleView from './HomeMiddleView'
+import HomeMiddleBottomView from './HomeMiddleBottomView'
+import HomeDetail from './HomeDetail'
+import HomeShopCenterView from './HomeShopCenterView'
 
 import {
   AppRegistry,
@@ -9,43 +14,66 @@ import {
   Image,
   TouchableOpacity,
   TextInput,
-  AlertIOS
+  AlertIOS,
+  ScrollView
 } from 'react-native';
 
 var Dimensions = require('Dimensions');
 var {width,height} = Dimensions.get('window');
 
-
-const REQUSET_URL = '';
 export default class Home extends Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      // banner数据源
-      headerDataArr: [],
-      //cell数据源
-      dataSource: new ListView.DataSource({
-        rowHasChanged: (r1,r2) => r1 !== r2
-      })
+
     };
   }
 
-  // 请求数据
-  componentDidMount() {
-
-  }
 
   render() {
     return (
       <View style={styles.container}>
         {/* 首页导航栏 */}
         {this.renerNavbar()}
-        <Text>home</Text>
+        {/*  */}
+        <ScrollView
+          contentContainerStyle={styles.scrollViewStyle}
+        >
+          {/* 头部视图 */}
+          <HomeTopView/>
+          {/* 中间视图 */}
+          <HomeMiddleView/>
+          {/* 中下视图 */}
+          <HomeMiddleBottomView
+            popToHome={(itemData) => this.pushToDetail(itemData.tplurl)}
+          />
+          {/* 购物中心 */}
+          <HomeShopCenterView
+            popToHome={(detailurl) => this.pushToDetail(detailurl)}
+          />
+        </ScrollView>
       </View>
     );
   }
+  // 跳转下级界面
+  pushToDetail(detailurl) {
+      this.props.navigator.push({
+        component: HomeDetail, // 要跳转的模块
+        title: '详情页',
+        // 给下级页面的参数
+        passProps: {'url': this.dealWithDetailUrl(detailurl)}
+      });
+  }
 
+  dealWithDetailUrl(detailurl) {
+    console.log(detailurl);
+  	var str = detailurl.replace(/imeituan/,'');
+  	var str = str.replace(/\:\/\/www.meituan.com\/web\/\?url\=/,'');
+    return str;
+  }
+
+  // 导航栏
   renerNavbar() {
     return(
       <View style={styles.navBarStyle}>
@@ -76,7 +104,8 @@ export default class Home extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1
+    flex: 1,
+    backgroundColor: '#e8e8e8'
   },
   topInputStyle: { // 输入框样式
     width: width * 0.68,
@@ -104,6 +133,9 @@ const styles = StyleSheet.create({
   leftTextStyle: {
     color: 'white',
     fontSize: 18,
+  },
+  scrollViewStyle: {
+
   }
 
 });

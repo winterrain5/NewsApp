@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import commonStyles from '../Style/commonStyles'
 import CommonCell from './CommonCell'
-
+import CommonNaBar from '../Main/CommonNaBar'
 import {
   AppRegistry,
   StyleSheet,
@@ -19,7 +19,11 @@ export default class More extends Component {
     return (
       <View style={commonStyles.container}>
         {/* 导航栏 */}
-        {this.renderNavBar()}
+        <CommonNaBar
+          title='更多'
+          rightImage='icon_mine_setting'
+          popToUp={() => {}}
+        />
         <ScrollView >
           <View style={{marginTop: 10}}>
             <CommonCell
@@ -60,32 +64,8 @@ export default class More extends Component {
       </View>
     );
   }
-  renderNavBar() {
-    return(
-      <View style={commonStyles.commonNavBarStyle}>
-        <TouchableOpacity>
-          <Text style={styles.textStyle}>更多</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.rightNavViewStyle} onPress={() => AlertIOS.alert('点击了')}>
-          <Image source={{uri: 'icon_mine_setting'}} style={commonStyles.navRightImageStyle}></Image>
-        </TouchableOpacity>
-      </View>
-    );
-  }
 }
 
 const styles = StyleSheet.create({
-  textStyle: {
-    color: 'white',
-    fontSize: 18,
-    alignItems:  'center'
-  },
-
-  rightNavViewStyle: {
-    // 定位
-    position: 'absolute',
-    right: 8,
-    bottom: 20
-  }
 
 });

@@ -76,13 +76,13 @@ export default class MyHeadTopView extends Component {
 const styles = StyleSheet.create({
   container: {
     backgroundColor: 'rgba(255,96,0,1)',
-    height: 140,
+    height: 320,
     justifyContent: 'center'
   },
   topViewStyle: {
     flexDirection: 'row',
     alignItems: 'center',
-
+    marginTop: 160
   },
   leftIconStyle: {
     width: 50,

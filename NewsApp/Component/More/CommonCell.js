@@ -31,7 +31,7 @@ export default class CommonCell extends Component {
 
   render() {
     return (
-      <TouchableOpacity onPress={() => AlertIOS.alert('点击了')}>
+      <TouchableOpacity onPress={() => AlertIOS.alert(this.props.title)}>
         <View style={styles.container}>
           <Text style={{marginLeft: 8}}>{this.props.title}</Text>
           {this.renderRightView()}

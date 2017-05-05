@@ -13,7 +13,11 @@ import {
 export default class Mine extends Component {
   render() {
     return (
-      <ScrollView style={{backgroundColor: '#e8e8e8'}}>
+      <ScrollView
+        style={{backgroundColor: '#e8e8e8'}}
+        contentInset={{top: -170}}
+        contentOffset={{y: 170}}
+        >
         {/* 头视图 */}
         <MyHeadTopView/>
         <View style={{marginTop: 10}}>

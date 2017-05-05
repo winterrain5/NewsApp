@@ -1,0 +1,9 @@
+{
+  "dataLeft":[
+    {"img1" : "mdqg", "img2" : "yyms", "title" : "探路组碳烤鱼", "price": "¥9.5", "sale": "再减3元"}
+  ],
+  "dataRight":[
+    {"maintitle" : "天天特价", "deputytitle" : "特惠不打烊", "imageurl" : "tttj", "typeface_color": "orange"},
+    {"maintitle" : "一元吃", "deputytitle" : "一元吃美食", "imageurl" : "yyms", "typeface_color": "red"}
+  ]
+}

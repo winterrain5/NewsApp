@@ -27,7 +27,7 @@ export default class Main extends Component {
     super(props);
     this.state = {
       // 设置tabbar选中标识
-      selectedTab: "mine" // 默认首页选中
+      selectedTab: "Home" // 默认首页选中
     };
   }
   render() {
